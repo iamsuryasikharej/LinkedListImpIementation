@@ -2,7 +2,7 @@ public class LinkedList {
     Node head;
 
 
-    public void insert(int data) {
+    void insert(int data) {
         Node node = new Node();
         node.data = data;
         node.next = null;
@@ -19,7 +19,7 @@ public class LinkedList {
         System.out.println("added" + node.data);
     }
 
-    public void show() {
+    void show() {
         int counter = 0;
         Node n;
         n = head;
@@ -33,7 +33,7 @@ public class LinkedList {
     }
 
 
-    public void insertStart(int data)
+  void insertStart(int data)
     {
         Node temp=head;
         Node node=new Node();
@@ -41,5 +41,36 @@ public class LinkedList {
         node.next=temp;
         head=node;
     }
+
+   void insertAt(int pos,int data){
+        int counter=0;
+        Node temp;
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        Node n;
+        n=head;
+        if (pos==1)
+        {
+            insertStart(data);
+        }
+        else {
+            while (n != null) {
+                counter++;
+                if (counter == (pos - 1)) {
+                    temp = n.next;
+                    n.next = node;
+                    node.next = temp;
+                }
+                n = n.next;
+            }
+        }
+
+
+
+
+    }
+
+
 }
 
