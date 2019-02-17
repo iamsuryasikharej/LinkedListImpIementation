@@ -4,6 +4,7 @@ public class MainClass {
         list.insert(12);
         list.insert(13);
         list.insert(14);
+        list.insertStart(11);
         list.show();
     }
 }
